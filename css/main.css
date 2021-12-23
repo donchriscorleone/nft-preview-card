@@ -1,0 +1,122 @@
+body {
+  background-color: #0d192b;
+  padding: 0;
+  margin: 0;
+  font-family: "Outfit", sans-serif;
+  font-size: 18px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px auto;
+  width: 80%;
+}
+@media screen and (min-width: 1440px) {
+  main {
+    margin: 80px auto;
+  }
+  main .card {
+    width: 350px;
+  }
+  main .card .card-img .view {
+    z-index: 4;
+    position: absolute;
+    top: 219px;
+    left: 690px;
+    display: none;
+  }
+  main .card .card-img:hover {
+    color: #00fff7;
+    cursor: pointer;
+  }
+  main .card .card-content h1:hover {
+    color: #00fff7;
+    cursor: pointer;
+  }
+  main .card .card-content {
+    padding-bottom: 30px;
+  }
+  main .card .card-content p {
+    width: 90%;
+  }
+  main .card .creator span:hover {
+    color: #00fff7;
+    cursor: pointer;
+  }
+}
+
+.card {
+  background-color: #14253d;
+  border-radius: 15px;
+  padding: 0px 15px;
+  height: 80vh;
+  display: grid;
+  grid-template-rows: 55% 30% 15%;
+  justify-items: center;
+  align-items: center;
+}
+.card .card-img {
+  width: 90%;
+}
+.card .card-img .main-img {
+  width: 100%;
+  border-radius: 15px;
+}
+.card .card-content {
+  border-bottom: 2px solid #2f415b;
+}
+.card .card-content h1 {
+  color: white;
+  font-size: 1.2rem;
+}
+.card .card-content p {
+  color: #8bacda;
+  font-size: 0.9rem;
+  line-height: 25px;
+}
+.card .card-content .price-date {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+.card .card-content .price-date .eth, .card .card-content .price-date .days {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+  width: 120px;
+}
+.card .card-content .price-date .eth img, .card .card-content .price-date .days img {
+  width: 18px;
+  height: 20px;
+}
+.card .card-content .price-date .eth p {
+  color: #00fff7;
+}
+.card .card-content .price-date p {
+  line-height: normal;
+}
+.card .creator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 15px;
+  justify-self: start;
+}
+.card .creator img {
+  width: 30px;
+  height: 30px;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+.card .creator p {
+  color: #8bacda;
+  font-size: 0.85rem;
+}
+.card .creator p span {
+  color: white;
+}
+
+/*# sourceMappingURL=main.css.map */

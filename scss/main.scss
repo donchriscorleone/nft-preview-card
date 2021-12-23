@@ -1,0 +1,181 @@
+$soft-blue: hsl(215, 51%, 70%);
+$cyan: hsl(178, 100%, 50%);
+$main-bg: hsl(217, 54%, 11%);
+$card-bg: hsl(216, 50%, 16%);
+$line: hsl(215, 32%, 27%);
+$white: hsl(0, 0%, 100%);
+$fontSize: 18px;
+$font-weights: (
+    "light": 300,
+    "regular": 400,
+    "semi-bold": 600,
+);
+$fontFam: 'Outfit', sans-serif;
+
+$mobile: 375px;
+$desktop: 1440px;
+
+@mixin reset {
+    padding: 0;
+    margin: 0;
+}
+
+@mixin applyFont {
+    font-family: $fontFam;
+    font-size: $fontSize;
+}
+
+@mixin flexSpaceBetweenCenter {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+@mixin flexCenterCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin activeStates {
+    color: $cyan;
+    cursor: pointer;
+}
+
+@mixin desktopCard {
+    @media screen and (min-width: $desktop) {
+        margin: 80px auto;
+
+        .card {
+            width: 350px;
+
+            .card-img .view {
+                z-index: 4;
+                position: absolute;
+                top: 219px;
+                left: 690px;
+                display: none;
+            }
+
+            .card-img:hover {
+                @include activeStates();
+            }
+
+            .card-content {
+                h1:hover {
+                    @include activeStates();
+                }
+            }
+
+            .card-content {
+                padding-bottom: 30px;
+
+                p {
+                    width: 90%;
+                }
+            }
+
+            .creator {
+                span:hover {
+                    @include activeStates();
+                }
+            }
+        }
+    }
+}
+
+body {
+    background-color: $main-bg;
+    @include reset();
+    @include applyFont();
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px auto;
+    width: 80%;
+
+    @include desktopCard();
+}
+
+.card {
+    background-color: $card-bg;
+    border-radius: 15px;
+    padding: 0px 15px;
+    height: 80vh;
+
+    display: grid;
+    grid-template-rows: 55% 30% 15%;
+    justify-items: center;
+    align-items: center;
+
+    .card-img {
+        width: 90%;
+
+        .main-img {
+            width: 100%;
+            border-radius: 15px;
+        }
+    }
+
+    .card-content {
+        border-bottom: 2px solid $line;
+        h1 {
+            color: $white;
+            font-size: 1.2rem;
+        }
+        p {
+            color: $soft-blue;
+            font-size: .9rem;
+            line-height: 25px;
+        }
+
+        .price-date {
+            @include flexSpaceBetweenCenter();
+
+            .eth, .days {
+                @include flexCenterCenter();
+                column-gap: 10px;
+                width: 120px;
+
+                img {
+                    width: 18px;
+                    height: 20px;
+                }
+            }
+
+            .eth p {
+                color: $cyan;
+            }
+
+            p {
+                line-height: normal;
+            }
+        }
+    }
+
+    .creator {
+        @include flexCenterCenter();
+        column-gap: 15px;
+        justify-self: start;
+
+        img {
+            width: 30px;
+            height: 30px;
+            border: 1px solid $white;
+            border-radius: 50%;
+        }
+
+        p {
+            color: $soft-blue;
+            font-size: .85rem;
+
+            span {
+                color: $white;
+            }
+        }
+    }
+}
+
