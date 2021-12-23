@@ -49,14 +49,6 @@ $desktop: 1440px;
         .card {
             width: 350px;
 
-            .card-img .view {
-                z-index: 4;
-                position: absolute;
-                top: 219px;
-                left: 690px;
-                display: none;
-            }
-
             .card-img:hover {
                 @include activeStates();
             }
@@ -117,6 +109,14 @@ main {
         .main-img {
             width: 100%;
             border-radius: 15px;
+        }
+
+        .view {
+            z-index: 4;
+            position: absolute;
+            top: 219px;
+            left: 690px;
+            display: none;
         }
     }
 
