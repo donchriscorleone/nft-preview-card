@@ -27,6 +27,8 @@ Users should be able to:
 
 ![Mobile (375px)](./screenshots/Mobile.png)
 
+![Performance](./screenshots/Performance.png)
+
 
 ### Links
 
